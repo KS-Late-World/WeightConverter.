@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>      
+    .main{
+        width: 500px;
+        height: 700px;
+        background-color: skyblue;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: orangered;
+    }
+    input, h1{
+        width: 90%;
+        height: 100px;
+        background-color: white;
+        text-align: center;
+        padding: 10px;
+        color: black;
+        border-radius: 90%;
+        background-color: black;
+        color: white;
+
+    }
+    input{
+        font-size: 2rem;
+    }
+    .head{
+        color: white;
+        font-size: large;
+    }
+    </style>
+</head>
+<body> <center>
+    <div class="head">
+        <h1>Weight Coverter</h1>
+    </div>
+    <div class="main">
+        <input type="text" id="inp" value="" placeholder="Enter the weight in kg.">
+        <h1>
+            <div>In Grams</div>
+            <span id="gm"></span>
+        </h1>
+        <h1>
+            <div>In Pounds</div>
+            <span id="lb"></span>
+        </h1>
+        <h1>
+            <div>In Ounce</div>
+            <span id="on"></span>
+        </h1>
+    </div> 
+
+    </center>
+    <script>
+        const input_box=document.getElementById('inp')
+        const grams=document.getElementById('gm')
+        const lb=document.getElementById('lb')
+        const on=document.getElementById('on')
+       
+       input_box.oninput=()=>{
+        if(input_box.value===""){
+           grams.innerText="0";
+           lb.innerText="0";
+           on.innerText="0";
+       }
+       else{
+         grams.innerText=input_box.value*1000
+        
+         console.log(input_box.value)
+       
+         lb.innerText=parseFloat(input_box.value)*2.20
+
+         console.log(input_box.value)
+       
+         on.innerText=parseFloat(input_box.value)*35.274
+       }
+       }
+    </script>
+</body>
+</html>
